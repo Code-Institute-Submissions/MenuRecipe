@@ -7,4 +7,4 @@ MarkupSafe==1.1.1
 numpy==1.17.0
 pyglet==1.4.1
 pysteroids==1.0.1
-Werkzeug==0.15.5
+Werkzeug==0.16.0
