@@ -2,8 +2,18 @@
 
 <div class="container">
     <h3>Create your recipe !</h3>
-    <div class="row">
         <form action="" method="POST" class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <select multiple>
+                  <option value="" disabled selected>Choose your option</option>
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                    </select>
+                    <label>Select your recipe category</label>
+                </div>
+            </div>
             <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">assignment</i>
@@ -69,9 +79,9 @@
                     <label for="cooking">Cooking instructions</label>
                 </div>
             </div>
-            
+
         </form>
     </div>
-</div>
+
 
 {% endblock %}
