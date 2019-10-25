@@ -5,7 +5,7 @@
     <div class="row">
         {% for recipe in recipes %}
         <div class="col s12 m6 l4">
-            <h2>{{recipe.category_name}}</h2>
+            <h2 class="category_title">{{recipe.category_name}}</h2>
             <div class="card" style="height:400px">
                 <div class="card-image">
                     
@@ -55,8 +55,8 @@
                     <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
                 </div>
                 <div class="card-content">
-                    <p>{{recipe.recipe_description}}</p>
-                    <p class="date">{{recipe.todays_date}}</p>
+                    <p class="bold">{{recipe.recipe_description}}</p>
+                    <p class="light">{{recipe.todays_date}}</p>
                 </div>
             </div>
         </div>
