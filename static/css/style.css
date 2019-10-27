@@ -1,18 +1,22 @@
 /* Universal */
 
-.light {
+.light_text {
     font-weight: 200;
     font-size: 0.8rem;
     font-family: 'Nunito', sans-serif;
 }
 
-.bold {
+.bold_text {
     font-size: 1.5rem;
     font-family: 'Nunito', sans-serif;
     font-weight: 600;
 }
 
 /* recipes.html */
+
+.card-content {
+    min-height: 220px;
+}
 
 .card .card-image img {
     height: 210px;
@@ -23,3 +27,23 @@
     font-weight: 100;
     font-size: 3rem;
 }
+
+/* media queries */
+
+@media only screen and (max-width: 1025px) {
+    
+    .bold_text{
+        font-size: 1rem;
+    }
+    .card .card-image img {
+        height: 180px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    
+    .recipe_card {
+        width: 65%!important;
+    }
+}
+

@@ -2,11 +2,12 @@
 {% block content %}
 
 <div class="container">
+    
     <div class="row">
         {% for recipe in recipes %}
         <div class="col s12 m6 l4">
             <h2 class="category_title">{{recipe.category_name}}</h2>
-            <div class="card" style="height:400px">
+            <div class="card">
                 <div class="card-image">
                     
                     {% if recipe.category_name == dish[0]['dish'] %}
@@ -55,13 +56,20 @@
                     <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
                 </div>
                 <div class="card-content">
-                    <p class="bold">{{recipe.recipe_description}}</p>
-                    <p class="light">{{recipe.todays_date}}</p>
+                    <p class="bold_text">{{recipe.recipe_description}}</p>
+                    <hr>
+                    {% if recipe.recipe_author %}
+                    <p class="standard_text">Made with love by: {{recipe.recipe_author}}</p>
+                    {% else %}
+                    <p class="standard_text">Made with love by: Secret Contributor</p>
+                    {% endif %}
+                    <p class="light_text">{{recipe.todays_date}}</p>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
+    
 </div>
 
 

@@ -4,7 +4,7 @@
     <h3>Create your recipe !</h3>
      <form action="{{ url_for('submit_recipe') }}" method="POST"  class="col s12">
         <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s6">
                 <i class="material-icons prefix">poll</i>
                 <select multiple id="category" name="category_name">
                           <option value="" disabled selected>Choose your recipe category</option>
@@ -14,11 +14,16 @@
                     </select>
                 <label>Category</label>
             </div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">mode_edit</i>
+                <textarea name="recipe_author" id="recipe_author" class="materialize-textarea" data-length="20"></textarea>
+                <label for="icon_telephone">Dont be shy, tell us your name !!</label>
+            </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
                 <i class="material-icons prefix">assignment</i>
-                <input id="recipe_name" name="recipe_name" type="text">
+                <input id="recipe_name" name="recipe_name" type="text" data-length="10">
                 <label for="icon_prefix">Recipe Title</label>
             </div>
             <div class="input-field col s6">
@@ -30,7 +35,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">mode_edit</i>
-                <textarea name="recipe_description" id="recipe_description" class="materialize-textarea"></textarea>
+                <textarea name="recipe_description" id="recipe_description" class="materialize-textarea" data-length="50"></textarea>
                 <label for="icon_telephone">Describe your recipe !!</label>
             </div>
         </div>
@@ -80,8 +85,7 @@
                 <label for="cooking">Cooking instructions</label>
             </div>
         </div>
-        
-        <hr>
+
         
         <button class="btn waves-effect waves-light" type="submit" name="action">Submit Recipe
             <i class="material-icons right">send</i>
