@@ -1,5 +1,11 @@
 /* Universal */
 
+.category_title {
+    font-family: 'Anton', sans-serif;
+    font-weight: 100;
+    font-size: 3rem;
+}
+
 .light_text {
     font-weight: 200;
     font-size: 0.8rem;
@@ -10,40 +16,81 @@
     font-size: 1.5rem;
     font-family: 'Nunito', sans-serif;
     font-weight: 600;
+    height: 80px;
+}
+
+.standard_text {
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* recipes.html */
 
 .card-content {
-    min-height: 220px;
+    max-height: 220px;
 }
 
 .card .card-image img {
     height: 210px;
 }
 
-.category_title {
-    font-family: 'Anton', sans-serif;
-    font-weight: 100;
-    font-size: 3rem;
-}
 
 /* media queries */
 
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 1200px) {
     
     .bold_text{
         font-size: 1rem;
+        height: 60px;
     }
     .card .card-image img {
         height: 180px;
     }
-}
-
-@media only screen and (max-width: 768px) {
     
-    .recipe_card {
-        width: 65%!important;
+    .standard_text {
+        margin-bottom: 10px;
     }
 }
+
+@media only screen and (max-width: 992px) {
+    
+    .standard_text {
+        margin-bottom: auto;
+        height: auto;
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {
+    
+     .card .card-image img {
+        height: 220px;
+    }
+    
+    .bold_text {
+        font-size: 1.5rem;
+        height: auto;
+    }
+    
+    .category_title {
+        text-align: center;
+    }
+    
+    .card-title {
+        background-color: black;
+        opacity: .7;
+        width: 100%;
+        text-align: center;
+    }
+    
+     .card .card-image .card-title {
+        padding: 10px;
+    }
+}
+
 

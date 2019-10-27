@@ -2,7 +2,6 @@
 {% block content %}
 
 <div class="container">
-    
     <div class="row">
         {% for recipe in recipes %}
         <div class="col s12 m6 l4">
@@ -56,12 +55,12 @@
                     <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
                 </div>
                 <div class="card-content">
-                    <p class="bold_text">{{recipe.recipe_description}}</p>
+                    <div class="bold_text">{{recipe.recipe_description}}</div>
                     <hr>
                     {% if recipe.recipe_author %}
-                    <p class="standard_text">Made with love by: {{recipe.recipe_author}}</p>
+                    <div class="standard_text">Made with love by: {{recipe.recipe_author}}</div>
                     {% else %}
-                    <p class="standard_text">Made with love by: Secret Contributor</p>
+                    <div class="standard_text">Made with love by: Secret Contributor</div>
                     {% endif %}
                     <p class="light_text">{{recipe.todays_date}}</p>
                 </div>
@@ -69,7 +68,6 @@
         </div>
         {% endfor %}
     </div>
-    
 </div>
 
 
