@@ -1,47 +1,51 @@
 {% extends 'base.html' %} {% block content %}
-
-    <h3>Create your recipe !</h3>
-     <form action="{{ url_for('submit_recipe') }}" method="POST"  class="col s12">
+                    
+    <h3>Hi - edit recipe</h3>
+     <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s6">
                 <i class="material-icons prefix">poll</i>
                 <select multiple id="category" name="category_name">
                           <option value="" disabled selected>Choose your recipe category</option>
-                          {% for category in categories %}
-                              <option value="{{category.category_name}}">{{category.category_name}}</option>
-                          {% endfor %}
+                            {% for category in categories %}
+                                {% if category.category_name == recipe.category_name %}
+                                    <option value="{{category.category_name}}" selected >{{category.category_name}}</option>
+                                    {% else %}
+                                    <option value="{{category.category_name}}">{{category.category_name}}</option>
+                                {% endif %}
+                            {% endfor %}
                     </select>
                 <label>Category</label>
             </div>
             <div class="input-field col s6">
                 <i class="material-icons prefix">mode_edit</i>
-                <textarea name="recipe_author" id="recipe_author" class="materialize-textarea" data-length="20"></textarea>
+                <textarea name="recipe_author" id="recipe_author" class="materialize-textarea" data-length="20">{{recipe.recipe_author}}</textarea>
                 <label for="icon_telephone">Dont be shy, tell us your name !!</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
                 <i class="material-icons prefix">assignment</i>
-                <input id="recipe_name" name="recipe_name" type="text" data-length="15">
+                <input id="recipe_name" name="recipe_name" type="text" data-length="15" value="{{recipe.recipe_name}}">
                 <label for="icon_prefix">Recipe Title</label>
             </div>
             <div class="input-field col s6">
                 <i class="material-icons prefix">today</i>
-                <input type="text" id="recipe_date" name="recipe_date" class="datepicker">
+                <input type="text" id="recipe_date" name="recipe_date" class="datepicker" value="{{recipe.recipe_date}}">
                 <label for="icon_prefix">Recipe creation date</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">mode_edit</i>
-                <textarea name="recipe_desc" id="recipe_desc" class="materialize-textarea" data-length="50"></textarea>
+                <textarea name="recipe_desc" id="recipe_desc" class="materialize-textarea" data-length="50">{{recipe.recipe_desc}}</textarea>
                 <label for="icon_telephone">Describe your recipe !!</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">mode_edit</i>
-                <textarea name="recipe_ing" id="recipe_ing" class="materialize-textarea"></textarea>
+                <textarea name="recipe_ing" id="recipe_ing" class="materialize-textarea">{{recipe.recipe_ing}}</textarea>
                 <label for="icon_telephone">Tell us about your ingredients !!</label>
             </div>
         </div>
@@ -49,7 +53,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">format_list_bulleted</i>
-                <textarea name="recipe_prep" id="recipe_prep" class="materialize-textarea"></textarea>
+                <textarea name="recipe_prep" id="recipe_prep" class="materialize-textarea">{{recipe.recipe_prep}}</textarea>
                 <label for="preparing">How are you preparing this meal ?</label>
             </div>
         </div>
@@ -57,7 +61,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">menu</i>
-                <textarea name="recipe_inst" id="recipe_inst" class="materialize-textarea"></textarea>
+                <textarea name="recipe_inst" id="recipe_inst" class="materialize-textarea">{{recipe.recipe_inst}}</textarea>
                 <label for="cooking">Cooking instructions</label>
             </div>
         </div>
@@ -65,7 +69,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">format_list_bulleted</i>
-                <textarea name="recipe_notes" id="recipe_notes" class="materialize-textarea"></textarea>
+                <textarea name="recipe_notes" id="recipe_notes" class="materialize-textarea">{{recipe.recipe_notes}}</textarea>
                 <label for="preparing">Other Notes</label>
             </div>
         </div>    
