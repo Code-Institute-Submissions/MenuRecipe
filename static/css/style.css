@@ -12,6 +12,7 @@ body {
     background-color: white;
     margin-top: 50px;
     opacity: 0.9;
+    padding: 30px;
 }
 
 .banner {
@@ -83,10 +84,12 @@ body {
 
 .box_text {
     font-size: 1.5rem;
+    line-height: 2.5rem;
     font-family: 'Nunito', sans-serif;
-    font-weight: 600;
+    font-weight: 300;
     text-align: center;
     padding: 30px;
+    text-transform: uppercase;
 }
 
 
@@ -105,6 +108,16 @@ body {
     .standard_text {
         margin-bottom: 10px;
     }
+    
+    .banner {
+        height: 400px;
+    }
+    
+    .box_text {
+        line-height: 2rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
 }
 
 @media only screen and (max-width: 992px) {
@@ -112,6 +125,14 @@ body {
     .standard_text {
         margin-bottom: auto;
         height: auto;
+    }
+    
+    .banner {
+        height: 250px;
+    }
+    
+    .box, .info {
+        height: 150px;
     }
     
 }
@@ -140,6 +161,10 @@ body {
     
      .card .card-image .card-title {
         padding: 10px;
+    }
+    
+    .content_info {
+        display: none;
     }
 }
 
