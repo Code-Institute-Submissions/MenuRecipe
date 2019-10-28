@@ -1,13 +1,13 @@
 {% extends 'base.html' %} {% block content %}
-
+<div class="container add_recipe">
     <h3>Create your recipe !</h3>
      <form action="{{ url_for('submit_recipe') }}" method="POST"  class="col s12">
          
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12 m6">
                 <i class="material-icons prefix">poll</i>
                 <select multiple id="category" name="category_name">
-                          <option value="" disabled selected>Choose your recipe category</option>
+                          <option value="" disabled selected>Select Category</option>
                           {% for category in categories %}
                               <option value="{{category.category_name}}">{{category.category_name}}</option>
                           {% endfor %}
@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="row">    
-            <div class="input-field col s6">
+            <div class="input-field col s12 m6">
                 <i class="material-icons prefix">today</i>
                 <input type="text" id="recipe_date" name="recipe_date" class="datepicker">
                 <label for="icon_prefix">Recipe creation date</label>
@@ -81,6 +81,6 @@
         </button>
 
     </form>
-
+</div>
 
 {% endblock %}
