@@ -5,16 +5,17 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Anton|Nunito:200,400,600,700,800,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-        <div class="container">
-        {% block content %} {% endblock %}
-        </div>
-   
-    
+
+<div class="container">
+    {% block content %} {% endblock %}
+</div>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
@@ -24,13 +25,13 @@
             $('.datepicker').datepicker();
             $('input#recipe_name, textarea#recipe_description').characterCounter();
         });
-        
+
         // title message board for mobile viewing
         var text = ["Find Recipes", "Create Recipes", "Update Recipes"];
         var counter = 0;
         var elem = document.getElementById("title");
         var inst = setInterval(change, 1500);
-        
+
         function change() {
             elem.innerHTML = text[counter];
             counter++;
@@ -38,7 +39,6 @@
                 counter = 0;
             }
         }
-        
     </script>
 </body>
 

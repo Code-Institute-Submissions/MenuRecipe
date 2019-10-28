@@ -115,6 +115,11 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.add_recipe {
+    margin: 0!important;
+    padding: 0!important;
+}
+
 
 /* media queries */
 
@@ -193,6 +198,7 @@ body {
     #title {
         display: block;
     }
+    
 }
 
 
