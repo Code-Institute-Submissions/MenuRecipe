@@ -32,19 +32,28 @@ html, body {
     background-image: url("https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1055&q=80");
     background-size: cover;
     height: auto;
+    margin-bottom: 40px;
 
 }
 
-.banner {
+header {
     background-image: url("https://images.unsplash.com/photo-1471113082645-fde63c139087?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1138&q=80");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 500px;
-    text-align: center;
+    min-height: 700px;
+    text-align: justify;
     color: white;
     position: relative;
+}
+
+nav .brand-logo {
+    padding-left: 30px;
+}
+
+nav {
+    background-color: transparent!important;
 }
 
 .category_title {
@@ -87,6 +96,16 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: transparent;
+}
+
+.buttons {
+    display: flex;
+    justify-content:center;
+    margin-bottom: 30px;
+}
+
+.btn {
+    margin: 10px;
 }
 
 /* recipes.html */
