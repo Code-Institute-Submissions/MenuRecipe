@@ -1,9 +1,9 @@
 {% extends 'base.html' %} {% block content %}
-                    
+<div class="container">                   
     <h3>Hi - edit recipe</h3>
      <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12">
                 <i class="material-icons prefix">poll</i>
                 <select multiple id="category" name="category_name">
                           <option value="" disabled selected>Choose your recipe category</option>
@@ -17,22 +17,26 @@
                     </select>
                 <label>Category</label>
             </div>
-            <div class="input-field col s6">
-                <i class="material-icons prefix">mode_edit</i>
-                <textarea name="recipe_author" id="recipe_author" class="materialize-textarea" data-length="20">{{recipe.recipe_author}}</textarea>
-                <label for="icon_telephone">Dont be shy, tell us your name !!</label>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">today</i>
+                <input type="text" id="recipe_date" name="recipe_date" class="datepicker" value="{{recipe.recipe_date}}">
+                <label for="icon_prefix">Recipe creation date</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12">
                 <i class="material-icons prefix">assignment</i>
                 <input id="recipe_name" name="recipe_name" type="text" data-length="15" value="{{recipe.recipe_name}}">
                 <label for="icon_prefix">Recipe Title</label>
             </div>
-            <div class="input-field col s6">
-                <i class="material-icons prefix">today</i>
-                <input type="text" id="recipe_date" name="recipe_date" class="datepicker" value="{{recipe.recipe_date}}">
-                <label for="icon_prefix">Recipe creation date</label>
+        </div> 
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">mode_edit</i>
+                <textarea name="recipe_author" id="recipe_author" class="materialize-textarea" data-length="20">{{recipe.recipe_author}}</textarea>
+                <label for="icon_telephone">Dont be shy, tell us your name !!</label>
             </div>
         </div>
         <div class="row">
@@ -75,11 +79,11 @@
         </div>    
 
         
-        <button class="btn waves-effect waves-light" type="submit" name="action">Submit Recipe
+        <button class="btn waves-effect waves-light" type="submit" name="action">Update Recipe
             <i class="material-icons right">send</i>
         </button>
 
     </form>
-
+</div> 
 
 {% endblock %}
