@@ -19,12 +19,13 @@ def get_recipes():
     with open("data/dish.json", "r") as json_data:
         data = json.load(json_data)
     return render_template("recipes.html", page_title='Recipes', dish=data, recipes=mongo.db.recipes.find())
-    
-    
+
+
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('addrecipe.html',
-                           categories=mongo.db.categories.find())   
+                           categories=mongo.db.categories.find())
+                           
 
 
 @app.route('/submit_recipe', methods=['POST'])
@@ -65,6 +66,7 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
     
+
     
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

@@ -27,7 +27,7 @@
 
     <div class="container recipes">
         <div class="row">
-            {% for recipe in recipes %}
+            {% for recipe in recipes|sort(attribute='category_name') %}
             <div class="col s12 m6 l4">
                 <h2 class="category_title">{{recipe.category_name}}</h2>
                 <div class="card">
