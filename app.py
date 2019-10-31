@@ -12,16 +12,17 @@ app.config["MONGO_DBNAME"] = 'recipe_collection'
 app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
 mongo = PyMongo(app)
+recipes = list(range(100))
 
 
 @app.route('/')
 @app.route('/get_recipes')
-def get_recipes():
+def get_recipes(offset=0, per_page=6):
     data = []
     with open("data/dish.json", "r") as json_data:
-        data = json.load(json_data)    
-    return render_template("recipes.html", page_title='Recipes', dish=data, recipes=mongo.db.recipes.find())
-                           
+        data = json.load(json_data)
+    return render_template("recipes.html", page_title='Recipes', dish=data,recipes=mongo.db.recipes.find()[offset: offset + per_page])
+
 
 @app.route('/add_recipe')
 def add_recipe():
