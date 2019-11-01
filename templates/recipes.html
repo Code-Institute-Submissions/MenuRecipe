@@ -1,5 +1,19 @@
 
-    
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home | Let's get cooking</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
 {% extends 'base.html' %} {% block content %}
 
 <div class="container-fluid content_info">
@@ -25,51 +39,51 @@
     </div>
 </div>
 
-    <div class="container recipes">
-        <div class="row">
-            {% for recipe in recipes|sort(attribute='category_name') %}
-            <div class="col s12 m6 l4">
-                <h2 class="category_title">{{recipe.category_name}}</h2>
-                <div class="card">
-                    <div class="card-image">
-                        {% if recipe.category_name == dish[0]['dish'] %}
-                        <img class="img-responsive" src="{{ dish[0]['url']}}"> {% elif recipe.category_name == dish[1]['dish'] %}
-                        <img class="img-responsive" src="{{ dish[1]['url']}}"> {% elif recipe.category_name == dish[2]['dish'] %}
-                        <img class="img-responsive" src="{{ dish[2]['url']}}"> {% elif recipe.category_name == dish[3]['dish'] %}
-                        <img class="img-responsive" src="{{ dish[3]['url']}}"> {% elif recipe.category_name == dish[4]['dish'] %}
-                        <img class="img-responsive" src="{{ dish[4]['url']}}"> {% elif recipe.category_name == dish[5]['dish'] %}
-                        <img class="img-responsive" src="{{ dish[5]['url']}}"> {% elif recipe.category_name == dish[6]['dish'] %}
-                        <img class="img-responsive" src="{{ dish[6]['url']}}"> {% elif recipe.category_name == dish[7]['dish'] %}
-                        <img class="img-responsive" src="{{ dish[7]['url']}}"> {% elif recipe.category_name == dish[8]['dish'] %}
-                        <img class="img-responsive" src="{{ dish[8]['url']}}"> {% elif recipe.category_name == dish[9]['dish'] %}
-                        <img class="img-responsive" src="{{ dish[9]['url']}}"> {% elif recipe.category_name == dish[10]['dish'] %}
-                        <img class="img-responsive" src="{{ dish[10]['url']}}"> {% elif recipe.category_name == dish[11]['dish'] %}
-                        <img class="img-responsive" src="{{ dish[11]['url']}}"> {% elif recipe.category_name == dish[12]['dish'] %}
-                        <img class="img-responsive" src="{{ dish[12]['url']}}"> {% elif recipe.category_name == dish[13]['dish'] %}
-                        <img class="img-responsive" src="{{ dish[13]['url']}}"> {% elif recipe.category_name == dish[14]['dish'] %}
-                        <img class="img-responsive" src="{{ dish[14]['url']}}"> {% elif recipe.category_name == dish[15]['dish'] %}
-                        <img class="img-responsive" src="{{ dish[15]['url']}}"> {% elif recipe.category_name == dish[16]['dish'] %}
-                        <img class="img-responsive" src="{{ dish[16]['url']}}"> {% elif recipe.category_name == dish[17]['dish'] %}
-                        <img class="img-responsive" src="{{ dish[17]['url']}}"> {% elif recipe.category_name == dish[18]['dish'] %}
-                        <img class="img-responsive" src="{{ dish[18]['url']}}"> {% else %}
-                        <img class="img-responsive" src="{{ dish[19]['url']}}"> {% endif %}
+<div class="container recipes">
+    <div class="row">
+        {% for recipe in recipes|sort(attribute='category_name') %}
+        <div class="col s12 m6 l4">
+            <h2 class="category_title">{{recipe.category_name}}</h2>
+            <div class="card">
+                <div class="card-image">
+                    {% if recipe.category_name == dish[0]['dish'] %}
+                    <img class="img-responsive" src="{{ dish[0]['url']}}"> {% elif recipe.category_name == dish[1]['dish'] %}
+                    <img class="img-responsive" src="{{ dish[1]['url']}}"> {% elif recipe.category_name == dish[2]['dish'] %}
+                    <img class="img-responsive" src="{{ dish[2]['url']}}"> {% elif recipe.category_name == dish[3]['dish'] %}
+                    <img class="img-responsive" src="{{ dish[3]['url']}}"> {% elif recipe.category_name == dish[4]['dish'] %}
+                    <img class="img-responsive" src="{{ dish[4]['url']}}"> {% elif recipe.category_name == dish[5]['dish'] %}
+                    <img class="img-responsive" src="{{ dish[5]['url']}}"> {% elif recipe.category_name == dish[6]['dish'] %}
+                    <img class="img-responsive" src="{{ dish[6]['url']}}"> {% elif recipe.category_name == dish[7]['dish'] %}
+                    <img class="img-responsive" src="{{ dish[7]['url']}}"> {% elif recipe.category_name == dish[8]['dish'] %}
+                    <img class="img-responsive" src="{{ dish[8]['url']}}"> {% elif recipe.category_name == dish[9]['dish'] %}
+                    <img class="img-responsive" src="{{ dish[9]['url']}}"> {% elif recipe.category_name == dish[10]['dish'] %}
+                    <img class="img-responsive" src="{{ dish[10]['url']}}"> {% elif recipe.category_name == dish[11]['dish'] %}
+                    <img class="img-responsive" src="{{ dish[11]['url']}}"> {% elif recipe.category_name == dish[12]['dish'] %}
+                    <img class="img-responsive" src="{{ dish[12]['url']}}"> {% elif recipe.category_name == dish[13]['dish'] %}
+                    <img class="img-responsive" src="{{ dish[13]['url']}}"> {% elif recipe.category_name == dish[14]['dish'] %}
+                    <img class="img-responsive" src="{{ dish[14]['url']}}"> {% elif recipe.category_name == dish[15]['dish'] %}
+                    <img class="img-responsive" src="{{ dish[15]['url']}}"> {% elif recipe.category_name == dish[16]['dish'] %}
+                    <img class="img-responsive" src="{{ dish[16]['url']}}"> {% elif recipe.category_name == dish[17]['dish'] %}
+                    <img class="img-responsive" src="{{ dish[17]['url']}}"> {% elif recipe.category_name == dish[18]['dish'] %}
+                    <img class="img-responsive" src="{{ dish[18]['url']}}"> {% else %}
+                    <img class="img-responsive" src="{{ dish[19]['url']}}"> {% endif %}
 
-                        <span class="card-title">{{recipe.recipe_name}}</span>
-                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                    </div>
-                    <div class="card-content">
-                        <div class="bold_text">{{recipe.recipe_desc}}</div>
-                        <hr> {% if recipe.recipe_author %}
-                        <div class="standard_text">Made with love by: {{recipe.recipe_author}}</div>
-                        {% else %}
-                        <div class="standard_text">Made with love by: Secret Contributor</div>
-                        {% endif %}
-                        <p class="light_text">{{recipe.recipe_date}}</p>
-                    </div>
+                    <span class="card-title">{{recipe.recipe_name}}</span>
+                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                </div>
+                <div class="card-content">
+                    <div class="bold_text">{{recipe.recipe_desc}}</div>
+                    <hr> {% if recipe.recipe_author %}
+                    <div class="standard_text">Made with love by: {{recipe.recipe_author}}</div>
+                    {% else %}
+                    <div class="standard_text">Made with love by: Secret Contributor</div>
+                    {% endif %}
+                    <p class="light_text">{{recipe.recipe_date}}</p>
                 </div>
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
+    </div>
 
 </div>
 

@@ -1,0 +1,73 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+    <h3>Tell us something great !</h3>
+     <form action="{{ url_for('submit_review') }}" method="POST"  class="col s12">
+         
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">poll</i>
+                <select multiple id="review_name" name="review_name">
+                          <option value="" disabled selected>Select Recipe</option>
+                          {% for recipe in recipes %}
+                              <option value="{{recipe.recipe_name}}">{{recipe.recipe_name}}</option>
+                          {% endfor %}
+                    </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">poll</i>
+                <select multiple id="review_cat" name="review_cat">
+                          <option value="" disabled selected>Select Category</option>
+                          {% for category in categories %}
+                              <option value="{{category.category_name}}">{{category.category_name}}</option>
+                          {% endfor %}
+                    </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">mode_edit</i>
+                <textarea name="review_notes" id="review_notes" class="materialize-textarea" data-length="50"></textarea>
+                <label for="icon_telephone">Support our community and leave some feedback</label>
+            </div>
+        </div>
+        <div class="row">    
+            <div class="input-field col s12">
+                <i class="material-icons prefix">mode_edit</i>
+                <textarea name="review_author" id="review_author" class="materialize-textarea" data-length="20"></textarea>
+                <label for="icon_telephone">Dont be shy, tell us your name !!</label>
+            </div>
+        </div>
+        <div class="row">    
+            <div class="input-field col s12">
+                <i class="material-icons prefix">today</i>
+                <input type="text" id="review_date" name="review_date" class="datepicker">
+                <label for="icon_prefix">Review date</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">sentiment_satisfied</i>
+                <select id="review_rating" name="review_rating">
+              <option value="" disabled selected>Give your rating</option>
+              <option value="1">1 star</option>
+              <option value="2">2 stars</option>
+              <option value="3">3 stars</option>
+              <option value="4">4 stars</option>
+              <option value="5">5 stars</option>
+            </select>
+            </div>
+        </div>
+        
+    <div class="container buttons">  
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit Review
+            <i class="material-icons right">send</i>
+        </button>
+    </div> 
+    </form>
+</div>
+
+
+{% endblock %}
+

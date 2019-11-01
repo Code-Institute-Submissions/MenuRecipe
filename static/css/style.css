@@ -8,30 +8,19 @@ html, body {
     overflow-x: hidden;
 }
 
-/* OLD VERSION 
-.background_image {
-    background-image: url("https://images.unsplash.com/photo-1559474520-4ad01f41e109?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: auto;
-    padding: 50px 0;
-    margin: 0px;
-}*/
-
 .background_image {
     background-color: black;
     opacity: 0.1;
     height: auto;
-    width: 100%;
+    width: 80%;
 }
 
 .recipes {
     padding:20px;
-    /*background-color: #3D9970;*/
     background-image: url("https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1055&q=80");
     background-size: cover;
     height: auto;
+    width: 90%;
     margin-bottom: 40px;
 
 }
@@ -42,7 +31,7 @@ header {
     background-size: cover;
     background-position: center;
     width: 100%;
-    min-height: 700px;
+    min-height: 500px;
     text-align: justify;
     color: white;
     position: relative;
@@ -54,6 +43,20 @@ nav .brand-logo {
 
 nav {
     background-color: transparent!important;
+}
+
+.sidenav {
+    width: 100%;
+    text-align: center;
+    background-color: #FACD3D;
+}
+
+.sidenav li>a {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 100;
+    font-size: 3rem;
+    margin: 20px;
+    text-align: left
 }
 
 .category_title {
@@ -92,10 +95,11 @@ nav {
     letter-spacing: 0.4rem;
     font-size: 5rem;
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: transparent;
+    text-align: center;
 }
 
 .buttons {
@@ -212,8 +216,9 @@ nav {
         height: 220px;
     }
 
-    .recipe_container {
+    .recipes {
         padding: 5px;
+        margin-top: 20px;
     }
 
     .bold_text {

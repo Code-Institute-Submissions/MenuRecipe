@@ -12,18 +12,17 @@ app.config["MONGO_DBNAME"] = 'recipe_collection'
 app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
 mongo = PyMongo(app)
-recipes = list(range(100))
 
 
 @app.route('/')
-@app.route('/get_recipes')
-def get_recipes(offset=0, per_page=6):
-    data = []
-    with open("data/dish.json", "r") as json_data:
-        data = json.load(json_data)
-    return render_template("recipes.html", page_title='Recipes', dish=data,recipes=mongo.db.recipes.find()[offset: offset + per_page])
-
-
+@app.route('/index')
+def index():
+        data = []
+        with open("data/dish.json", "r") as json_data:
+            data = json.load(json_data)
+        return render_template("recipes.html", page_title='Index', dish=data, recipes=mongo.db.recipes.find())
+                            
+                            
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('addrecipe.html',
@@ -60,7 +59,7 @@ def update_recipe(recipe_id):
         'recipe_inst': request.form.get('recipe_inst'),
         'recipe_notes': request.form.get('recipe_notes')
     })
-    return redirect(url_for('get_recipes'))
+    return redirect(url_for('index'))
 
 
 @app.route('/delete_recipe/<recipe_id>')
@@ -69,6 +68,22 @@ def delete_recipe(recipe_id):
     return redirect(url_for('get_recipes'))
 
 
+@app.route('/reviews')
+def reviews():
+        return render_template("reviews.html", page_title='Reviews', reviews=mongo.db.reviews.find()) 
+
+
+@app.route('/add_review')
+def add_review():
+    return render_template('addreview.html',
+                           categories=mongo.db.categories.find(), recipes=mongo.db.recipes.find(), reviews=mongo.db.reviews.find())
+                           
+
+@app.route('/submit_review', methods=['POST'])
+def submit_review():
+    reviews = mongo.db.reviews
+    reviews.insert_one(request.form.to_dict())
+    return redirect(url_for('reviews'))
     
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
