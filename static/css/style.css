@@ -1,4 +1,5 @@
-/* Universal */
+
+/* Universal ----------------------------------------------------------*/
 
 html, body {
     width: 100%;
@@ -112,9 +113,9 @@ nav {
     margin: 10px;
 }
 
-/* recipes.html */
+/* recipes.html ------------------------------------------------*/
 
-.card-content {
+.recipe-content {
     max-height: 220px;
 }
 
@@ -155,14 +156,34 @@ nav {
     text-align: center;
 }
 
-/* add recipe.html */
+/* add recipe.html ---------------------------------------*/
 
 .add_recipe {
     background-color: white;
 }
 
 
-/* media queries */
+/* reviews -----------------------------------------------*/
+
+.reviews .card-title {
+    height: 80px;
+}
+
+.review .card-content {
+    height: 300px;
+}
+
+.reviews .card-action {
+    margin-top: 10px;
+}
+
+.review {
+    margin-top: 50px;
+    width: 90%;
+}
+
+
+/* media queries -----------------------------------------*/
 
 @media only screen and (max-width: 1200px) {
 
@@ -235,6 +256,12 @@ nav {
         opacity: .7;
         width: 100%;
         text-align: center;
+    }
+    
+    .reviews .card-title {
+        background-color: inherit;
+        opacity: none;
+        text-align: left;
     }
 
     .card .card-image .card-title {
