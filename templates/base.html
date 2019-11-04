@@ -13,21 +13,23 @@
     <header>
         <nav>
             <div class="nav-wrapper transparent">
-                <a href="#!" class="brand-logo">Logo</a>
+                <a href="#!" class="brand-logo">E-Cook Book</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">Javascript</a></li>
-                    <li><a href="mobile.html">Mobile</a></li>
+                    <li><a href="{{ url_for('index')}}">Home</a></li>
+                    <li><a href="{{ url_for('add_recipe')}}">Create Recipe</a></li>
+                    <li><a href="{{ url_for('reviews')}}">Reviews</a></li>
+                    <li><a href="{{ url_for('add_review')}}">Create Review</a></li>
                 </ul>
             </div>
         </nav>
     
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="#"><i class="material-icons home"></i>Home</a></li>
-            <li><a href="#">Create</a></li>
-
+            <li><a href="{{ url_for('index')}}" class="waves-effect waves-light btn btn_small white"></i>Home</a></li>
+            <li><a href="{{ url_for('add_recipe')}}" class="waves-effect waves-light btn btn_small white">Create Recipe</a></li>
+            <li><a href="{{ url_for('reviews')}}" class="waves-effect waves-light btn btn_small white">Reviews</a></li>
+            <li><a href="{{ url_for('add_review')}}" class="waves-effect waves-light btn btn_small white">Create Review</a></li>
+        
         </ul>
         <h1 class="text_title" id="title">Let's Go</h1>
     </header>

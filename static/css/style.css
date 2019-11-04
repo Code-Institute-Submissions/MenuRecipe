@@ -44,20 +44,23 @@ nav .brand-logo {
 
 nav {
     background-color: transparent!important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 .sidenav {
     width: 100%;
-    text-align: center;
-    background-color: #FACD3D;
+    background-image: url("https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1055&q=80");
 }
 
-.sidenav li>a {
+.sidenav li>a.btn {
+    color: black;
     font-family: 'Nunito', sans-serif;
-    font-weight: 100;
-    font-size: 3rem;
-    margin: 20px;
-    text-align: left
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 30px;
+    text-align: left;
 }
 
 .category_title {
@@ -274,6 +277,12 @@ nav {
 
     #title {
         color: white;
+    }
+    
+    h3 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 30px;
     }
 
 }

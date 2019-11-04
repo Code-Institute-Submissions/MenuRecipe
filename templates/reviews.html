@@ -17,7 +17,7 @@
 
 <div class="container review">
   <div class="row">
-    {% for review in reviews|sort (attribute='review_date') %}
+    {% for review in reviews|sort (attribute='review_date')|reverse %}
     <div class="col s12 m6 l6">
       <div class="card teal lighten-5 reviews">
         <div class="card-content black-text">
@@ -40,9 +40,8 @@
             
           </div>
         </div>
-        <div class="container buttons">  
-        <a href="#" class="waves-effect waves-light btn btn_small blue">Review</a>
-        <a href="{{ url_for('add_review', review_id=review._id)}}" class="waves-effect waves-light btn btn_small green">Add</a>
+        <div class="container buttons"> 
+          <a href="{{ url_for('delete_review', review_id=review._id)}}" class="waves-effect waves-light btn btn_small red">Delete</a>
         </button>
     </div> 
       </div>
